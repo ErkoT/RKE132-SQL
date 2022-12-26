@@ -77,7 +77,7 @@ static void RemoveCustomer(SQLiteConnection myConnection)
     idToDelete = Console.ReadLine();
 
     command = myConnection.CreateCommand();
-    command.CommandText = $"Rowid delete in progress = {idToDelete}";
+    command.CommandText = $"DELETE FROM customer WHERE rowid = {idToDelete}";
     int rowRemoved = command.ExecuteNonQuery();
     Console.WriteLine($"{rowRemoved} was removed.");
 
